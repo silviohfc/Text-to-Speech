@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+    outline: none;
+    
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+    height: 100vh;
+}
+
+body {
+    background-color: #f4f4f4;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background-color: white;
+    box-shadow: 2px 2px 3px -4px black;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    width: 940px;
+    min-height: 300px;
+    max-height: 590px;
+
+    margin: 0 auto;
+    padding: 16px;
+
+    border-radius: 4px;
+}
+
+.container h3 {
+    color: #333;
+    letter-spacing: 0.4px;
+}
+
+/* ------------------------------ COMMENT FORM ------------------------------ */
+.container .comment-form {
+    padding-right: 78px;
+
+    border-right: 1px dotted #f2f2f2;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.container .comment-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.container .comment-form textarea {
+    margin-top: 16px;
+
+    padding: 8px;
+
+    resize: none;
+    height: 150px;
+
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+}
+
+.container .comment-form button {
+    margin-top: 16px;
+
+    padding: 8px 16px;
+
+    border-radius: 4px;
+
+    background-color: #27ae60;
+    color: white;
+
+    cursor: pointer;
+
+    transition: all ease-in-out 100ms;
+}
+
+.container .comment-form button:hover {
+    background-color: #2ecc71;
+}
+
+.container .comment-form button:active {
+    transform: scale(0.97);
+}
+
+/* ------------------------------ COMMENT LIST ------------------------------ */
+.container .comments-list {
+    padding-left: 16px;
+    height: 100%;
+}
+
+.container .comments-list .list {
+    margin-top: 16px;
+
+    max-height: 516px;
+    overflow: auto;
+}
+
+.list .item {
+    background-color: #f9f9f9;
+
+    border-radius: 4px;
+
+    margin-bottom: 8px;
+    padding: 8px;
+
+    font-size: 14px;
+
+    display: grid;
+    grid-template-columns: 1fr 64px;
+    grid-gap: 16px;
+    align-items: center;
+}
+
+.list .item button {
+    background-color: #fdfdfd;
+
+    width: 64px;
+    height: 64px;
+
+    border-radius: 50%;
+    border-bottom: 1px solid rgba(0,0,0,.3);
+
+    cursor: pointer;
+}
+
+.list .item button:active {
+    border: none;
+}

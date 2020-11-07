@@ -7,7 +7,7 @@ const db = require('./config/database')
 const server = express()
 
 server.use(express.static('public'))
-// server.use(routes)
+server.use(routes)
 
 server.set('view engine', 'njk')
 
