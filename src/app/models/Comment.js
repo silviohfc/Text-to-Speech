@@ -10,11 +10,11 @@ module.exports = {
         }
     },
 
-    create(comment) {
+    create(data) {
         try {
             return db.query(`
-                INSERT INTO comments (comment) VALUES (?);
-            `, [comment])
+                INSERT INTO comments (comment, path) VALUES (?, ?);
+            `, [data.comment, data.path])
         }
         catch(err) {
             console.log(err)
