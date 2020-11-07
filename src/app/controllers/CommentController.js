@@ -15,8 +15,11 @@ module.exports = {
         const { comment } = req.body
 
         try {
-            await Comment.create(comment)
-            return res.send('Created comment')
+            const [{ insertId }] = await Comment.create(comment)
+            const results = await Comment.find(insertId)
+            const data = results[0][0]
+            
+            return res.json(data)
         }
         catch(err) {
             console.log(err)

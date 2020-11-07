@@ -10,6 +10,7 @@
   "author": "Silvio Henrique",
   "license": "MIT",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "ibm-watson": "^5.7.1",
     "mysql2": "^2.2.5",

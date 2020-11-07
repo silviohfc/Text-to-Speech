@@ -10,17 +10,17 @@
     
     <section class="container">
 
-        <div class="comment-form">
+        <div class="left-panel">
             <h3>Comentário</h3>
 
-            <form method="POST" action="/">
-                <textarea name="comment"></textarea>
+            <form method="POST" id="commentForm" action="/">
+                <textarea id="comment" name="comment"></textarea>
                 <button type="submit">Cadastrar</button>
             </form>
             
         </div>
 
-        <div class="comments-list">
+        <div class="right-panel">
             <h3>Comentários</h3>
 
             <div class="list">
@@ -34,6 +34,8 @@
         </div>
 
     </section>
+
+    <script src="/scripts.js"></script>
 
 </body>
 </html>

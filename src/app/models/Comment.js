@@ -13,9 +13,17 @@ module.exports = {
     create(comment) {
         try {
             return db.query(`
-                INSERT INTO comments (comment)
-                VALUES (?)
+                INSERT INTO comments (comment) VALUES (?);
             `, [comment])
+        }
+        catch(err) {
+            console.log(err)
+        }
+    },
+
+    find(id) {
+        try {
+            return db.query('SELECT * FROM comments WHERE id = ?', [id])
         }
         catch(err) {
             console.log(err)
