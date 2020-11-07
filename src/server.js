@@ -6,6 +6,7 @@ const db = require('./config/database')
 
 const server = express()
 
+server.use(express.urlencoded({ extended: true }))
 server.use(express.static('public'))
 server.use(routes)
 

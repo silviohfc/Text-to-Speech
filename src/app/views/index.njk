@@ -24,10 +24,12 @@
             <h3>Comentários</h3>
 
             <div class="list">
-                <div class="item">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas quisquam voluptates dolores debitis labore, ipsum animi adipisci possimus illum magnam veritatis autem fuga neque voluptate dicta ab consectetur delectus iusto?</p>
-                    <button>Ouvir</button>
-                </div>
+                {% for comment in comments%}
+                    <div class="item">
+                        <p>{{ comment.comment }}</p>
+                        <button>Ouvir</button>
+                    </div>
+                {% endfor %}
             </div>
         </div>
 

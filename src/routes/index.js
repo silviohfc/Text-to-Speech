@@ -1,8 +1,10 @@
 const express = require('express')
 const routes = express.Router()
 
-routes.get('/', (req, res) => {
-    res.render('index')
-})
+const CommentController = require('../app/controllers/CommentController')
+
+routes.get('/', CommentController.index)
+
+routes.post('/', CommentController.create)
 
 module.exports = routes
