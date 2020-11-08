@@ -9,10 +9,8 @@ module.exports = {
             let [results] = await Comment.all()
             results = results.map(comment => ({
                 ...comment,
-                path: `${req.protocol}://${req.hostname}/${comment.path}`
+                path: comment.path.replace('public', '')
             }))
-
-            console.log(results)
 
             return res.render('index', { comments: results })
         }
@@ -23,6 +21,8 @@ module.exports = {
 
     async create(req, res) {
         const { comment, audio_name } = req.body
+        
+        if (comment === "") return console.log("The comment cannot be empty!")
 
         const data = {
             comment,
@@ -39,14 +39,14 @@ module.exports = {
             const [{ insertId }] = await Comment.create(data)
 
             const audio = await textToSpeech.synthesize(speechConfig)
-            audio.result.pipe(fs.createWriteStream(`public/audios/${audio_name}.wav`))
+            await audio.result.pipe(fs.createWriteStream(`public/audios/${audio_name}.wav`))
 
             const results = await Comment.find(insertId)
             let resData = results[0][0]
 
             resData = {
                 ...resData,
-                path: `${req.protocol}://${req.hostname}/${resData.path}`
+                path: `${req.protocol}://${req.headers.host}/${resData.path}`
             }
             
             return res.json(resData)

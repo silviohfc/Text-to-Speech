@@ -22,13 +22,13 @@
 
         <div class="right-panel">
             <h3>Comentários</h3>
+            <audio src=""></audio>
 
             <div class="list">
                 {% for comment in comments%}
-                    <div class="item">
+                    <div class="item" data-source={{comment.path}}>
                         <p>{{ comment.comment }}</p>
                         <button>Ouvir</button>
-                        <audio src={{comment.path}}></audio>
                     </div>
                 {% endfor %}
             </div>

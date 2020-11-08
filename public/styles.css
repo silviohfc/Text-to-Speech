@@ -72,6 +72,10 @@ body {
     border-radius: 4px;
 }
 
+.container .left-panel textarea.error {
+    border: 2px solid #e74c3c
+}
+
 .container .left-panel button {
     margin-top: 16px;
 
@@ -93,6 +97,11 @@ body {
 
 .container .left-panel button:active {
     transform: scale(0.97);
+}
+
+.container .left-panel button:disabled {
+    background-color: #999;
+    cursor: initial;
 }
 
 /* ------------------------------ COMMENT LIST ------------------------------ */
